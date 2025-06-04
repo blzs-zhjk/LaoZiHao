@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<footer th:fragment="common-footer" class="footer mt-5 py-4 bg-dark text-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <h5>老字号全域营销赋能平台</h5>
+                <p class="text-muted">焕新中华瑰宝，数智引领未来</p>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>联系我们</h5>
+                <ul class="list-unstyled">
+                    <li>天津修雷傲贸易有限公司</li>
+                    <li><i class="fas fa-envelope me-2"></i>info@laozihao.com</li>
+                    <li><i class="fas fa-phone me-2"></i>400-123-4567</li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-3">
+                <h5>快速链接</h5>
+                <ul class="list-unstyled">
+                    <li><a class="text-white-50" th:href="@{/}">首页</a></li>
+                    <li><a class="text-white-50" th:href="@{/solutions}">解决方案</a></li>
+                    <li><a class="text-white-50" th:href="@{/case-studies}">成功案例</a></li>
+                    <li><a class="text-white-50" th:href="@{/contact}">联系我们</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="bg-light">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-start">
+                <p class="small text-muted">© <span th:text="${#dates.format(#dates.createNow(), 'yyyy')}">2023</span> 天津修雷傲贸易有限公司 & 薪火云链队. 版权所有.</p>
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                        <a class="text-white-50" href="#">隐私政策</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="text-white-50" href="#">服务条款</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div th:fragment="scripts">
+    <!-- 引入jQuery和Bootstrap的JS -->
+    <script th:src="@{/webjars/jquery/3.6.3/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.bundle.min.js}"></script>
+    <!-- 自定义JS -->
+    <script th:src="@{/js/main.js}"></script>
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="btn btn-primary back-to-top" title="返回顶部">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+</div>
+</body>
+</html> 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="common-header(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title} + ' - 老字号全域营销赋能平台'">老字号全域营销赋能平台</title>
+    <!-- 引入Bootstrap CSS -->
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}">
+    <!-- 自定义CSS，确保16:9的横纵比和手机APP风格 -->
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <!-- 字体图标 -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+        <a class="navbar-brand" th:href="@{/}">老字号赋能平台</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${#httpServletRequest.requestURI == '/' ? 'active' : ''}" 
+                       th:href="@{/}">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${#httpServletRequest.requestURI == '/about' ? 'active' : ''}" 
+                       th:href="@{/about}">关于我们</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${#httpServletRequest.requestURI == '/solutions' ? 'active' : ''}" 
+                       th:href="@{/solutions}">解决方案</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${#httpServletRequest.requestURI == '/case-studies' ? 'active' : ''}" 
+                       th:href="@{/case-studies}">成功案例</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${#httpServletRequest.requestURI == '/insights' ? 'active' : ''}" 
+                       th:href="@{/insights}">行业洞察</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:classappend="${#httpServletRequest.requestURI == '/contact' ? 'active' : ''}" 
+                       th:href="@{/contact}">联系我们</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</body>
+</html> 

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中华老字号小游戏集合</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="title-box">
+                <h1>中华老字号</h1>
+                <h2>传统文化小游戏集合</h2>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" placeholder="搜索游戏..." class="search-input">
+                <button class="search-button"><i class="fas fa-search"></i></button>
+            </div>
+            
+            <nav class="game-categories">
+                <ul>
+                    <li><a href="#all" class="active">全部游戏</a></li>
+                    <li><a href="#popular">热门游戏</a></li>
+                    <li><a href="#puzzle">益智游戏</a></li>
+                    <li><a href="#action">动作游戏</a></li>
+                    <li><a href="#tradition">传统游戏</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <div class="featured-games">
+            <h3 class="section-title"><i class="fas fa-star"></i> 推荐游戏</h3>
+            <div class="featured-slider">
+                <div class="featured-game">
+                    <img src="images/link-game-cover.png" alt="连连看游戏" onerror="this.src='images/default-game.jpg'">
+                    <div class="featured-info">
+                        <h3>传统连连看</h3>
+                        <p>连接相同的老字号标志，考验你的记忆力！</p>
+                        <a href="link-game/index1.html" class="play-btn">立即开始</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <main>
+            <h3 class="section-title"><i class="fas fa-gamepad"></i> 所有游戏</h3>
+            <div class="games-container">
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="images/link-game-cover.png" alt="连连看游戏" onerror="this.src='images/default-game.jpg'">
+                        <div class="game-category">益智</div>
+                    </div>
+                    <div class="game-info">
+                        <h3>传统连连看</h3>
+                        <p>点击相同的图案，连接相同的老字号标志！</p>
+                        <a href="link-game/index1.html" class="play-btn">开始游戏</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="images/fortune-cookie-cover.png" alt="天降福饼游戏" onerror="this.src='images/default-game.jpg'">
+                        <div class="game-category">动作</div>
+                    </div>
+                    <div class="game-info">
+                        <h3>天降福饼</h3>
+                        <p>接住从天而降的福饼，收集好运与祝福！</p>
+                        <a href="https://cloudwind1.github.io/red_packet/" class="play-btn">开始游戏</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="images/fragrance-puzzle-cover.png" alt="香韵拼图游戏" onerror="this.src='images/default-game.jpg'">
+                        <div class="game-category">益智</div>
+                    </div>
+                    <div class="game-info">
+                        <h3>香韵拼图</h3>
+                        <p>拼凑中华传统香料图案，探索古老香道文化！</p>
+                        <a href="https://cloudwind1.github.io/my_website/" class="play-btn">开始游戏</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="images/block-breaker-cover.png" alt="打砖块游戏" onerror="this.src='images/default-game.jpg'">
+                        <div class="game-category">动作</div>
+                    </div>
+                    <div class="game-info">
+                        <h3>打砖块</h3>
+                        <p>经典街机游戏，挑战你的反应速度和手眼协调能力！</p>
+                        <a href="h5-game-blockBreaker-master/index.html" class="play-btn">开始游戏</a>
+                    </div>
+                </div>
+                
+                <!-- 更多即将推出的游戏示例 -->
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="images/feihua-cover.png" alt="中华飞花令游戏" onerror="this.src='images/default-game.jpg'">
+                        <div class="game-category">文化</div>
+                    </div>
+                    <div class="game-info">
+                        <h3>中华飞花令</h3>
+                        <p>测试你的古诗词知识，体验传统文学之美</p>
+                        <a href="#" class="play-btn">开始游戏</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="images/feiyi-cover.png" alt="非遗拼图游戏" onerror="this.src='images/default-game.jpg'">
+                        <div class="game-category">益智</div>
+                    </div>
+                    <div class="game-info">
+                        <h3>非遗拼图</h3>
+                        <p>拼接中国非物质文化遗产图案，了解传统工艺</p>
+                        <a href="#" class="play-btn">开始游戏</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="images/jinyin-cover.png" alt="老字号模拟经营游戏" onerror="this.src='images/default-game.jpg'">
+                        <div class="game-category">模拟</div>
+                    </div>
+                    <div class="game-info">
+                        <h3>老字号模拟经营</h3>
+                        <p>经营你自己的中华老字号，体验百年品牌的传承</p>
+                        <a href="#" class="play-btn">开始游戏</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-image">
+                        <img src="images/gongfudashi.png" alt="功夫大师游戏" onerror="this.src='images/default-game.jpg'">
+                        <div class="game-category">动作</div>
+                    </div>
+                    <div class="game-info">
+                        <h3>功夫大师</h3>
+                        <p>学习中国传统武术动作，成为功夫高手</p>
+                        <a href="#" class="play-btn">开始游戏</a>
+                    </div>
+                </div>
+                
+                <!-- 茶道模拟器已删除 -->
+            </div>
+        </main>
+        
+        <section class="about-section">
+            <h3 class="section-title"><i class="fas fa-info-circle"></i> 关于我们的游戏集</h3>
+            <div class="about-content">
+                <p>中华老字号游戏集合致力于通过有趣的小游戏形式，向玩家展示中国传统文化的魅力。我们精心设计的游戏不仅好玩，还蕴含着丰富的文化内涵，让您在休闲娱乐的同时了解中华老字号的故事与价值。</p>
+                <p>我们的游戏无需下载，完全免费，支持电脑、平板和手机等多种设备，随时随地都能畅玩。未来我们将不断丰富游戏内容，带给您更多精彩体验！</p>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>中华老字号游戏集</h4>
+                    <p>传承中华文化，弘扬传统魅力</p>
+                </div>
+                <div class="footer-section">
+                    <h4>游戏分类</h4>
+                    <ul>
+                        <li><a href="#puzzle">益智游戏</a></li>
+                        <li><a href="#action">动作游戏</a></li>
+                        <li><a href="#tradition">传统游戏</a></li>
+                        <li><a href="#culture">文化游戏</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#about">关于项目</a></li>
+                        <li><a href="#contact">联系我们</a></li>
+                        <li><a href="#privacy">隐私政策</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>中华老字号游戏集 © 2025 版权所有</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

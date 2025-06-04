@@ -1,0 +1,429 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --primary-color: #C53030;
+  --accent-color: #B7791F;
+  --text-color: #F7FAFC;
+  --text-secondary: #E2E8F0;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: #000;
+  -khtml-user-select: none;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-color);
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+}
+
+.mobile-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: url('images/game-bg.png') center no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 开始屏幕样式 */
+.wrapper .init-box {
+  position: relative; 
+  width: 100%;
+  height: 100%;
+  background: url('images/start-cover.png') center no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper .init-box .game-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #FFF;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.wrapper .init-box .game-subtitle {
+  font-size: 1.2rem;
+  color: #FFF;
+  margin-bottom: 30px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.wrapper .init-box .start-btn {
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 30px;
+  box-shadow: var(--box-shadow);
+}
+
+.wrapper .init-box .start-btn::before {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 0 20px 35px;
+  border-color: transparent transparent transparent #FFF;
+  margin-left: 8px;
+}
+
+/* 游戏区域样式 */
+.wrapper .game-box {
+  position: relative; 
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper .game-box .toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.toolbar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+.toolbar-label {
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+  color: var(--text-secondary);
+}
+
+.wrapper .game-box .toolbar .time,
+.wrapper .game-box .toolbar .level,
+.wrapper .game-box .toolbar .scoring {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .game-box .toolbar .disorder {
+  width: 30px;
+  height: 30px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--box-shadow);
+}
+
+.wrapper .game-box .toolbar .disorder::after {
+  content: "↻";
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* 游戏区域 */
+.wrapper .game-box .game-area {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.wrapper .game-box .game-area table#game {
+  border-spacing: 0;
+  border-collapse: collapse;
+  transform-origin: center;
+  margin: 0 auto;
+}
+
+.wrapper .game-box .game-area table#game .game-row {
+  height: 50px;
+}
+
+.wrapper .game-box .game-area table#game .game-row td {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.wrapper .game-box .game-area table#game .game-row td .pic-box {
+  line-height: 40px;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: url('images/pic-bg.png') center no-repeat;
+  background-size: contain;
+}
+
+.wrapper .game-box .game-area table#game .game-row td .pic-box.active {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px; 
+  background: url(images/active.png) center no-repeat;
+  background-size: 100% 100%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.wrapper .game-box .game-area table#game .game-row td .pic-box img {
+  vertical-align: middle;
+  width: 36px;
+  height: 36px;
+}
+
+.wrapper .game-box .game-area #canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 游戏结束样式 */
+.wrapper .game-over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.wrapper .game-over .game-over-content {
+  width: 85%;
+  max-width: 320px;
+  background-color: rgba(40, 40, 40, 0.95);
+  border-radius: 16px;
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--accent-color);
+}
+
+.wrapper .game-over .game-over-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.wrapper .game-over .score-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.wrapper .game-over .score-label {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 5px;
+}
+
+.wrapper .game-over .current-score {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.wrapper .game-over .history-score {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.wrapper .game-over .replay-btn,
+.wrapper .game-over .back-home-btn {
+  display: block;
+  width: 80%;
+  padding: 12px 0;
+  margin: 10px 0;
+  text-align: center;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.wrapper .game-over .back-home-btn {
+  background-color: #2D3748;
+}
+
+.wrapper .game-over .replay-btn:active,
+.wrapper .game-over .back-home-btn:active {
+  transform: scale(0.95);
+}
+
+.empty {
+  opacity: 0;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* 响应式设计 */
+/* 小屏幕手机 */
+@media screen and (max-width: 360px) {
+  .wrapper .game-box .game-area table#game .game-row {
+    height: 45px;
+  }
+  
+  .wrapper .game-box .game-area table#game .game-row td {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .wrapper .game-box .game-area table#game .game-row td .pic-box {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .wrapper .game-box .game-area table#game .game-row td .pic-box img {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .wrapper .game-box .toolbar {
+    padding: 5px;
+  }
+  
+  .toolbar-label {
+    font-size: 0.7rem;
+  }
+  
+  .wrapper .game-box .toolbar .time,
+  .wrapper .game-box .toolbar .level,
+  .wrapper .game-box .toolbar .scoring {
+    font-size: 1rem;
+  }
+}
+
+/* 大屏幕手机或平板 */
+@media screen and (min-width: 600px) {
+  .wrapper .game-box .game-area table#game .game-row {
+    height: 60px;
+  }
+  
+  .wrapper .game-box .game-area table#game .game-row td {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .wrapper .game-box .game-area table#game .game-row td .pic-box {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+  }
+  
+  .wrapper .game-box .game-area table#game .game-row td .pic-box img {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* 横屏优化 */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .wrapper .game-box .toolbar {
+    padding: 3px;
+  }
+  
+  .toolbar-item {
+    padding: 2px;
+  }
+  
+  .toolbar-label {
+    font-size: 0.7rem;
+    margin-bottom: 2px;
+  }
+  
+  .wrapper .game-box .toolbar .time,
+  .wrapper .game-box .toolbar .level,
+  .wrapper .game-box .toolbar .scoring {
+    font-size: 0.9rem;
+  }
+  
+  .wrapper .game-box .game-area table#game .game-row {
+    height: 40px;
+  }
+  
+  .wrapper .game-box .game-area table#game .game-row td {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .wrapper .game-box .game-area table#game .game-row td .pic-box {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+  }
+  
+  .wrapper .game-box .game-area table#game .game-row td .pic-box img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/* 支持深色模式 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-color: #F7FAFC;
+    --text-secondary: #E2E8F0;
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

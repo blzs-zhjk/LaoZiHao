@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#000000">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no">
+  <title>传统连连看游戏</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <div class="mobile-wrapper">
+    <div class="wrapper">
+      <div class="init-box">
+        <div class="start-btn"></div>
+        <div class="game-title">传统连连看</div>
+        <div class="game-subtitle">点击开始游戏</div>
+      </div>
+      <div class="game-box hidden">
+        <div class="toolbar">
+          <div class="toolbar-item">
+            <div class="toolbar-label">时间</div>
+            <div class="time"></div>
+          </div>
+          <div class="toolbar-item">
+            <div class="toolbar-label">等级</div>
+            <div class="level"></div>
+          </div>
+          <div class="toolbar-item disorder-container">
+            <div class="toolbar-label">重排</div>
+            <div class="disorder"></div>
+          </div>
+          <div class="toolbar-item">
+            <div class="toolbar-label">分数</div>
+            <div class="scoring"></div>
+          </div>
+        </div>
+        <div class="game-area">
+          <table id="game">
+            <canvas id="canvas" class="hidden" width=800 height=560></canvas>
+          </table>
+        </div>
+      </div>
+      <div class="game-over hidden">
+        <div class="game-over-content">
+          <div class="game-over-title">游戏结束</div>
+          <div class="score-container">
+            <div class="score-label">本局得分</div>
+            <div class="current-score"></div>
+          </div>
+          <div class="score-container">
+            <div class="score-label">最高分</div>
+            <div class="history-score"></div>
+          </div>
+          <div class="replay-btn">再来一局</div>
+          <div class="back-home-btn">返回首页</div>
+        </div>
+      </div>
+      <audio class="hidden" src="https://assets.mixkit.co/music/preview/mixkit-game-level-music-689.mp3" loop="loop"></audio>
+    </div>
+  </div>
+  
+  <script src="https://cdn.bootcdn.net/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>
